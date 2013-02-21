@@ -1,0 +1,21 @@
+#include "WProgram.h
+
+//var globale
+volatile unsigned long last_pulse=0;  //var globala
+volatile boolean dead=false;          // true cand am fost loviti de laser 
+
+
+
+void lasertag(){
+  
+  
+}
+
+void tsop(){  //functia se executa la fiecare trecere 1->0 a senzorului
+   if(!dead)
+   if( micros()-last_pulse < 2100 )
+     dead=true;
+
+   last_pulse=micros(); 
+}//sunt ceva buguri aici? 
+
